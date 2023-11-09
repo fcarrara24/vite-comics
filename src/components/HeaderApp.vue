@@ -1,10 +1,13 @@
+
 <template>
-    <div id="containerHeader" class=" d-flex flex-row justify-content-evenly">
-        <div class="subcontainer-header d-flex flex-row justify-content-center align-items-center">
+    <div id="containerHeader" class=" d-flex flex-row justify-content-evenly ">
+
+        <div class="subcontainer-header d-flex flex-row justify-content-center align-items-center ">
+
             <img src="../assets/img/favicon.ico" alt="">
         </div>
 
-        <ul class="subcontainer-header  d-flex flex-row justify-content-center align-items-center h-100 m-0">
+        <ul class=" subcontainer-header  d-flex flex-row justify-content-center align-items-center h-100">
             <li v-for="(section, index) in categories" @click="selectTitle(index)" class="h-100">
                 {{ section.title }}
                 <div class="bottom-color active" v-if="(index === selected)">
@@ -70,6 +73,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../node_modules/bootstrap/scss/bootstrap";
+
 #containerHeader {
     background-color: white;
     margin: 20px auto;

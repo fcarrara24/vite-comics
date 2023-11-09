@@ -1,18 +1,20 @@
 <template>
     <div class="footer">
-        <div class="footer-top d-flex flex-row justify-content-evenly py-5 ">
-            <ul class="outer-ul  d-flex flex-column flex-wrap ">
-                <li v-for="(category, index) in categories">
-                    <h4 class="category">{{ category.title }}</h4>
-                    <ul class="pl-0">
-                        <li v-for="(link) in category.links" class="">
-                            <a class="sublink" href="#">{{ link }}</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="img-container overflow-hidden d-flex flex-row justify-content-end ">
-                <img src="../assets/img/dc-logo-bg.png" alt="">
+        <div id="footer-top">
+            <div class="footer-description container d-flex flex-row justify-content-between py-5">
+                <ul class="outer-ul  d-flex flex-column flex-wrap ">
+                    <li v-for="(category, index) in categories">
+                        <h4 class="category">{{ category.title }}</h4>
+                        <ul class="pl-0">
+                            <li v-for="(link) in category.links" class="">
+                                <a class="sublink" href="#">{{ link }}</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="img-container overflow-hidden d-flex flex-row justify-content-end ">
+                    <img src="../assets/img/dc-logo-bg.png" alt="">
+                </div>
             </div>
         </div>
         <div class="footer-bottom d-flex flex-row justify-content-evenly align-items-center py-3 ">
@@ -24,7 +26,9 @@
                     FOLLOW US
                 </div>
 
-                <img v-for="i in 9" src="../assets/img/footer-facebook.png" alt="" class=" me-2 ">
+                <img v-for="index in 5" :src="'/img/footer' + index + '.png'" alt="" class=" me-2 ">
+
+
 
             </div>
         </div>
@@ -47,7 +51,8 @@ export default {
                         'Games',
                         'Videos',
                         'News',
-                    ]
+                    ],
+
                 },
                 {
                     title: "SHOP",
@@ -83,7 +88,9 @@ export default {
 
                     ]
                 },
-            ]
+            ],
+            start: '../assets/img/footer',
+            png: '.png'
 
 
 
@@ -93,8 +100,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.footer-top {
+#footer-top {
     background-image: url('../assets/img/footer-bg.jpg');
+    max-height: 50vh;
+}
+
+.footer-description {
+    max-height: 50vh;
 }
 
 .sublink {
@@ -114,6 +126,10 @@ export default {
 
 .footer-top {
     max-height: 50vh;
+}
+
+.img-container {
+    max-height: 100%;
 }
 
 img {

@@ -1,20 +1,19 @@
 
 <template>
-    <div id="containerHeader" class=" d-flex flex-row justify-content-evenly ">
+    <div id="containerHeader">
+        <div class=" d-flex flex-row justify-content-between container">
+            <div class="subcontainer-header d-flex flex-row justify-content-start align-items-center w-25">
+                <img src="../assets/img/dc-logo.png" class="" alt="">
+            </div>
 
-        <div class="subcontainer-header d-flex flex-row justify-content-center align-items-center ">
-
-            <img src="../assets/img/favicon.ico" alt="">
-        </div>
-
-        <ul class=" subcontainer-header  d-flex flex-row justify-content-center align-items-center h-100">
-            <li v-for="(section, index) in categories" @click="selectTitle(index)" class="h-100">
-                {{ section.title }}
-                <div class="bottom-color active" v-if="(index === selected)">
-
+            <div v-for="(section, index) in categories" @click="selectTitle(index)"
+                class="tilesTotali d-flex flex-column justify-content-between ">
+                <div></div>
+                <div>{{ section.title }}</div>
+                <div class="bottom-color " style="height: 3px;" :class="{ active: (index === selected) }">
                 </div>
-            </li>
-        </ul>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -75,6 +74,8 @@ export default {
 <style lang="scss" scoped>
 @import "../node_modules/bootstrap/scss/bootstrap";
 
+.tilesTotali {}
+
 #containerHeader {
     background-color: white;
     margin: 20px auto;
@@ -82,9 +83,16 @@ export default {
 
 }
 
+.subcontainer-header {
+    min-height: 100%;
+}
+
+img {
+    height: 80%;
+}
+
 .active {
-    background-color: red;
-    height: 3px;
+    background-color: #10508c;
 }
 
 li {
@@ -92,5 +100,6 @@ li {
     margin-left: 20px;
     padding: 40px 0;
     align-content: stretch;
+    line-height: 100%;
 }
 </style>

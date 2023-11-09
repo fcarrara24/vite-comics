@@ -74,11 +74,9 @@ export default {
 <style lang="scss" scoped>
 @import "../node_modules/bootstrap/scss/bootstrap";
 
-.tilesTotali {}
 
 #containerHeader {
     background-color: white;
-    margin: 20px auto;
 
 
 }
@@ -92,7 +90,7 @@ img {
 }
 
 .active {
-    background-color: #10508c;
+    background-color: #0282f9;
 }
 
 li {

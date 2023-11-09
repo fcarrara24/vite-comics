@@ -4,6 +4,7 @@
     <div>
         <HeaderApp />
         <MainApp />
+        <FasciaApp />
         <FooterApp />
     </div>
 </template>
@@ -12,6 +13,9 @@
 import HeaderApp from './components/HeaderApp.vue';
 import MainApp from './components/MainApp.vue';
 import FooterApp from './components/FooterApp.vue';
+import FasciaApp from './components/FasciaApp.vue';
+
+
 
 export default {
 
@@ -21,7 +25,9 @@ export default {
     components: {
         HeaderApp,
         MainApp,
-        FooterApp
+        FasciaApp,
+        FooterApp,
+
     }
 }
 </script>

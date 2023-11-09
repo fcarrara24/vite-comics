@@ -1,8 +1,8 @@
 <template>
     <div class="footer">
         <div id="footer-top">
-            <div class="footer-description container d-flex flex-row justify-content-between py-5">
-                <ul class="outer-ul  d-flex flex-column flex-wrap ">
+            <div class="footer-description container d-flex flex-row justify-content-between ">
+                <ul class="outer-ul  d-flex flex-column flex-wrap py-5">
                     <li v-for="(category, index) in categories">
                         <h4 class="category">{{ category.title }}</h4>
                         <ul class="pl-0">
@@ -17,19 +17,17 @@
                 </div>
             </div>
         </div>
-        <div class="footer-bottom d-flex flex-row justify-content-evenly align-items-center py-3 ">
-            <div>
-                <div class="button">SIGN UP NOW</div>
-            </div>
-            <div class=" d-flex flex-row align-items-center ">
+        <div style="background-color: #565656;">
+            <div class="footer-bottom d-flex flex-row justify-content-between align-items-center py-3 container ">
                 <div>
-                    FOLLOW US
+                    <div class="button">SIGN UP NOW</div>
                 </div>
-
-                <img v-for="index in 5" :src="'/img/footer' + index + '.png'" alt="" class=" me-2 ">
-
-
-
+                <div class=" d-flex flex-row align-items-center ">
+                    <div style="color: #0282f9; font-size: bolder;" class="me-2">
+                        FOLLOW US
+                    </div>
+                    <img v-for="index in 5" :src="'/img/footer' + index + '.png'" alt="" class=" me-2 ">
+                </div>
             </div>
         </div>
     </div>
@@ -100,6 +98,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.footer {
+    background-color: #565656;
+}
+
 #footer-top {
     background-image: url('../assets/img/footer-bg.jpg');
     max-height: 50vh;
@@ -107,6 +109,7 @@ export default {
 
 .footer-description {
     max-height: 50vh;
+    overflow-x: visible;
 }
 
 .sublink {
@@ -130,16 +133,22 @@ export default {
 
 .img-container {
     max-height: 100%;
+    overflow-x: visible;
+
+
 }
 
 img {
-    max-height: 100%;
+    height: 120%;
+    transform: translate(5%, -10%);
+    overflow-x: visible;
+    z-index: 1000;
 }
 
 .button {
     background-color: #00000000;
     color: white;
-    border: 1px solid blue;
+    border: 3px solid #0282f9;
     padding: 10px;
 }
 </style>

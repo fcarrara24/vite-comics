@@ -1,5 +1,5 @@
 <template>
-    <div class="card gap-2 d-flex flex-column justify-content-start" @click="logItems(image)">
+    <div class="gap-2 d-flex flex-column justify-content-start myCard" @click="logItems(image)">
         <div class="image-conteiner">
             <img :src="image" alt="">
         </div>
@@ -23,14 +23,33 @@ export default {
         }
     },
     mounted() {
-        this.logItems(this.image)
     },
     methods: {
-        logItems(val) {
-            console.log('image ' + val)
-        }
+
     }
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.image-conteiner {
+    width: 10vw;
+    height: 10vw;
+    overflow-y: hidden;
+}
+
+.myCard {
+    padding: 10px;
+    max-width: calc(100%/6);
+    min-width: calc(100%/6);
+}
+
+img {
+    width: 100%;
+}
+
+.title {
+    color: white;
+    max-width: 150px;
+    padding-bottom: 20px;
+}
+</style>

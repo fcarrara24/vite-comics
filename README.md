@@ -39,3 +39,40 @@ npm run build
 
 - Bonus:
 Creare un componente aggiuntivo per gestire la fascia azzurra con le icone.
+
+
+# attenzione
+
+dato che le immagini forniteci provenivano da un file di tipo json e non da un dato js, al posto di usare il tipico approccio
+
+``` js
+const data
+data = ...
+export {data}
+```
+``` vue
+import {data} from 'path'
+```
+ho preferito  mantenere il formato json e importare il tutto tramite la libreria di axios, quindi
+
+``` vue
+import axios from 'axios'
+....
+export default {
+    ....
+    methods: {
+        fetchData() {
+            axios
+                .get('../src/components/data/dc-comics.json')
+                .then(response => {
+                    this.importedFiles = response.data
+                    console.log(this.importedFiles)
+                })
+        },
+        
+    },
+    mounted() {
+        this.fetchData()
+    }
+}
+```
